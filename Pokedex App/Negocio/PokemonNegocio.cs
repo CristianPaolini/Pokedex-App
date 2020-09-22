@@ -18,7 +18,7 @@ namespace Negocio
             List < Pokemon > lista = new List<Pokemon>();
             conexion.ConnectionString = "data source=.\\sqlexpress; initial catalog=POKEMON_DB; integrated security=sspi";
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Select P.id, P.nombre, P.descripcion, P.Imagen, T.Descripcion Tipo From POKEMONS P, TIPOS T Where P.IdTipo=T.Id";
+            comando.CommandText = "Select P.id idPoke, P.nombre, P.descripcion, P.Imagen, T.Descripcion Tipo, T.Id idTipo From POKEMONS P, TIPOS T Where P.IdTipo=T.Id";
             comando.Connection = conexion;
 
             conexion.Open();
@@ -29,9 +29,10 @@ namespace Negocio
                 aux.Nombre = lector.GetString(1);
                 aux.Descripcion = lector.GetString(2);
                 aux.UrlImage = lector.GetString(3);
-
+                aux.Id = (int)lector["idPoke"]; 
                 aux.Tipo = new Tipo();
                 aux.Tipo.Descripcion = (string)lector["Tipo"];
+                aux.Tipo.Id = (int)lector["idTipo"];
 
                 lista.Add(aux);
             }
@@ -39,6 +40,11 @@ namespace Negocio
             conexion.Close();
             return lista;
 
+        }
+
+        public void modificar(Pokemon pokemon)
+        {
+            throw new NotImplementedException();
         }
 
         public void agregar(Pokemon nuevo)

@@ -28,7 +28,8 @@ namespace WinForms
         {
             PokemonNegocio negocio = new PokemonNegocio();
             dgvLista.DataSource = negocio.listar();
-            dgvLista.Columns[2].Visible = false;
+            dgvLista.Columns[0].Visible = false;
+            dgvLista.Columns[3].Visible = false;
 
         }
 
@@ -51,6 +52,15 @@ namespace WinForms
         {
             frmAlta alta = new frmAlta();
             alta.ShowDialog();
+            cargar();
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Pokemon poke;
+            poke = (Pokemon)dgvLista.CurrentRow.DataBoundItem;
+            frmAlta modificar = new frmAlta();
+            modificar.ShowDialog();
             cargar();
         }
     }

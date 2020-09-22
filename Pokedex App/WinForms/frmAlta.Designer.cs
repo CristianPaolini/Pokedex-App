@@ -36,12 +36,14 @@
             this.cboTipo = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblUrlImage = new System.Windows.Forms.Label();
+            this.txtUrlImage = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(49, 59);
+            this.lblNombre.Location = new System.Drawing.Point(75, 59);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 0;
@@ -50,7 +52,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(30, 117);
+            this.lblDescripcion.Location = new System.Drawing.Point(56, 113);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
             this.lblDescripcion.TabIndex = 1;
@@ -59,7 +61,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(65, 173);
+            this.lblTipo.Location = new System.Drawing.Point(91, 207);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(31, 13);
             this.lblTipo.TabIndex = 2;
@@ -82,14 +84,14 @@
             // cboTipo
             // 
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(147, 164);
+            this.cboTipo.Location = new System.Drawing.Point(147, 207);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(127, 21);
             this.cboTipo.TabIndex = 5;
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(33, 240);
+            this.btnAceptar.Location = new System.Drawing.Point(33, 260);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 6;
@@ -99,7 +101,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(199, 240);
+            this.btnCancelar.Location = new System.Drawing.Point(199, 260);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 7;
@@ -107,11 +109,29 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblUrlImage
+            // 
+            this.lblUrlImage.AutoSize = true;
+            this.lblUrlImage.Location = new System.Drawing.Point(61, 160);
+            this.lblUrlImage.Name = "lblUrlImage";
+            this.lblUrlImage.Size = new System.Drawing.Size(61, 13);
+            this.lblUrlImage.TabIndex = 8;
+            this.lblUrlImage.Text = "Url Imagen:";
+            // 
+            // txtUrlImage
+            // 
+            this.txtUrlImage.Location = new System.Drawing.Point(147, 160);
+            this.txtUrlImage.Name = "txtUrlImage";
+            this.txtUrlImage.Size = new System.Drawing.Size(127, 20);
+            this.txtUrlImage.TabIndex = 9;
+            // 
             // frmAlta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 313);
+            this.Controls.Add(this.txtUrlImage);
+            this.Controls.Add(this.lblUrlImage);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.cboTipo);
@@ -138,5 +158,7 @@
         private System.Windows.Forms.ComboBox cboTipo;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lblUrlImage;
+        private System.Windows.Forms.TextBox txtUrlImage;
     }
 }
