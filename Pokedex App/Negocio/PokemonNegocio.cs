@@ -53,10 +53,11 @@ namespace Negocio
 
                 conexion.ConnectionString = "data source=.\\sqlexpress; initial catalog=POKEMON_DB; integrated security=sspi";
                 comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Update POKEMONS Set Nombre=@Nombre, Descripcion=@Descripcion, idTipo=@idTipo Where Id=@id";
+                comando.CommandText = "Update POKEMONS Set Nombre=@Nombre, Descripcion=@Descripcion, Imagen=@Imagen, idTipo=@idTipo Where Id=@id";
                 
                 comando.Parameters.AddWithValue("@Nombre", pokemon.Nombre);
                 comando.Parameters.AddWithValue("@Descripcion", pokemon.Descripcion);
+                comando.Parameters.AddWithValue("@Imagen", pokemon.UrlImage);
                 comando.Parameters.AddWithValue("@idTipo", pokemon.Tipo.Id);
                 comando.Parameters.AddWithValue("@id", pokemon.Id);
                 comando.Connection = conexion;

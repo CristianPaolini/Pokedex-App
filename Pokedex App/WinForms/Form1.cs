@@ -59,7 +59,7 @@ namespace WinForms
         {
             Pokemon poke;
             poke = (Pokemon)dgvLista.CurrentRow.DataBoundItem;
-            frmAlta modificar = new frmAlta();
+            frmAlta modificar = new frmAlta(poke);
             modificar.ShowDialog();
             cargar();
         }

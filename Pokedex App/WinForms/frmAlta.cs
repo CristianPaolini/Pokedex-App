@@ -67,7 +67,7 @@ namespace WinForms
             {
                 txtNombre.Text = pokemon.Nombre;
                 txtDescripcion.Text = pokemon.Descripcion;
-
+                txtUrlImage.Text = pokemon.UrlImage;
                 cboTipo.SelectedValue = pokemon.Tipo.Id;
 
                 Text = "Modificación Pokemon";
