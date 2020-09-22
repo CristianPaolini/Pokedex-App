@@ -44,7 +44,31 @@ namespace Negocio
 
         public void modificar(Pokemon pokemon)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                SqlConnection conexion = new SqlConnection();
+                SqlCommand comando = new SqlCommand();
+                List<Pokemon> lista = new List<Pokemon>();
+
+                conexion.ConnectionString = "data source=.\\sqlexpress; initial catalog=POKEMON_DB; integrated security=sspi";
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "Update POKEMONS Set Nombre=@Nombre, Descripcion=@Descripcion, idTipo=@idTipo Where Id=@id";
+                
+                comando.Parameters.AddWithValue("@Nombre", pokemon.Nombre);
+                comando.Parameters.AddWithValue("@Descripcion", pokemon.Descripcion);
+                comando.Parameters.AddWithValue("@idTipo", pokemon.Tipo.Id);
+                comando.Parameters.AddWithValue("@id", pokemon.Id);
+                comando.Connection = conexion;
+
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public void agregar(Pokemon nuevo)
