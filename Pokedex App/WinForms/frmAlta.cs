@@ -31,10 +31,20 @@ namespace WinForms
 
             nuevo.Nombre = txtNombre.Text;
             nuevo.Descripcion = txtDescripcion.Text;
+            nuevo.Tipo = (Tipo)cboTipo.SelectedItem;
 
-            negocio.agregar();
+            negocio.agregar(nuevo);
 
+            MessageBox.Show("Agregado Exitosamente", "Exito");
+            Close();
 
+        }
+
+        private void frmAlta_Load(object sender, EventArgs e)
+        {
+            TipoNegocio tipoNegocio = new TipoNegocio();
+
+            cboTipo.DataSource = tipoNegocio.listar();
         }
     }
 }

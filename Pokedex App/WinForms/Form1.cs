@@ -21,9 +21,15 @@ namespace WinForms
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            cargar();
+        }
+
+        private void cargar()
+        {
             PokemonNegocio negocio = new PokemonNegocio();
             dgvLista.DataSource = negocio.listar();
             dgvLista.Columns[2].Visible = false;
+
         }
 
         private void dgvLista_SelectionChanged(object sender, EventArgs e)
@@ -45,6 +51,7 @@ namespace WinForms
         {
             frmAlta alta = new frmAlta();
             alta.ShowDialog();
+            cargar();
         }
     }
 }

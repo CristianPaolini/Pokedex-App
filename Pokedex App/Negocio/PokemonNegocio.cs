@@ -43,7 +43,19 @@ namespace Negocio
 
         public void agregar(Pokemon nuevo)
         {
-            
+            SqlConnection conexion = new SqlConnection();
+            SqlCommand comando = new SqlCommand();
+            conexion.ConnectionString = "data source=.\\sqlexpress; initial catalog=POKEMON_DB; integrated security=sspi";
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "Insert Into POKEMONS (Nombre, Descripcion, Imagen, idTipo) Values (@Nombre, @Descripcion, @Imagen, @idTipo)";
+            comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
+            comando.Parameters.AddWithValue("@Descripcion", nuevo.Descripcion);
+            comando.Parameters.AddWithValue("@Imagen", nuevo.UrlImage);
+            comando.Parameters.AddWithValue("@idTipo", nuevo.Tipo.Id);
+            comando.Connection = conexion;
+
+            conexion.Open();
+            comando.ExecuteNonQuery();
         }
     }
 }

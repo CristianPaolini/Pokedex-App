@@ -13,3 +13,4 @@ C:\Users\CRISTIAN PAOLINI\Desktop\Pokedex Alone\Pokedex App\WinForms\obj\Debug\W
 C:\Users\CRISTIAN PAOLINI\Desktop\Pokedex Alone\Pokedex App\WinForms\obj\Debug\WinForms.exe
 C:\Users\CRISTIAN PAOLINI\Desktop\Pokedex Alone\Pokedex App\WinForms\obj\Debug\WinForms.pdb
 C:\Users\CRISTIAN PAOLINI\Desktop\Pokedex Alone\Pokedex App\WinForms\obj\Debug\WinForms.Pokedex.resources
+C:\Users\CRISTIAN PAOLINI\Desktop\Pokedex Alone\Pokedex App\WinForms\obj\Debug\WinForms.frmAlta.resources
