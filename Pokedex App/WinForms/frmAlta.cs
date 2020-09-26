@@ -33,6 +33,12 @@ namespace WinForms
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             PokemonNegocio negocio = new PokemonNegocio();
+            Validacion val = new Validacion();
+            bool[] comprobacion = val.validacionesfrmAlta(txtNombre.Text, txtDescripcion.Text, txtUrlImage.Text, cboTipo.SelectedIndex);
+            if(comprobacion[0] && comprobacion[1] && comprobacion[2] && comprobacion[3])
+            {
+
+            
             if (pokemon == null)
                 pokemon = new Pokemon();
 
@@ -50,7 +56,16 @@ namespace WinForms
 
             MessageBox.Show("Operación efectuada exitosamente", "Exito");
             Close();
+            }
 
+            else
+            {
+                if (!comprobacion[0]) txtNombre.BackColor = Color.Red;
+                if (!comprobacion[1]) txtDescripcion.BackColor = Color.Red;
+                if (!comprobacion[2]) txtUrlImage.BackColor = Color.Red;
+                if (!comprobacion[3]) cboTipo.BackColor = Color.Red;
+                MessageBox.Show("Campos faltantes", "Error en la carga");
+            }
         }
 
         private void frmAlta_Load(object sender, EventArgs e)
