@@ -73,6 +73,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(127, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtDescripcion
             // 
@@ -80,6 +81,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(127, 20);
             this.txtDescripcion.TabIndex = 4;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // cboTipo
             // 
@@ -88,6 +90,7 @@
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(127, 21);
             this.cboTipo.TabIndex = 5;
+            this.cboTipo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cboTipo_KeyPress);
             // 
             // btnAceptar
             // 
@@ -124,6 +127,7 @@
             this.txtUrlImage.Name = "txtUrlImage";
             this.txtUrlImage.Size = new System.Drawing.Size(127, 20);
             this.txtUrlImage.TabIndex = 9;
+            this.txtUrlImage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUrlImage_KeyPress);
             // 
             // frmAlta
             // 

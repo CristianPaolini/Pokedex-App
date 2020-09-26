@@ -88,5 +88,25 @@ namespace WinForms
                 Text = "Modificación Pokemon";
             }
         }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtNombre.BackColor = System.Drawing.Color.White;
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDescripcion.BackColor = System.Drawing.Color.White;
+        }
+
+        private void txtUrlImage_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtUrlImage.BackColor = System.Drawing.Color.White;
+        }
+
+        private void cboTipo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            cboTipo.BackColor = System.Drawing.Color.White;
+        }
     }
 }
