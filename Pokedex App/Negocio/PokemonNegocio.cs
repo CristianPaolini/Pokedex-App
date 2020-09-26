@@ -44,26 +44,33 @@ namespace Negocio
 
         public void modificar(Pokemon pokemon)
         {
-
+            AccesoDatos conexion = new AccesoDatos();
             try
             {
-                SqlConnection conexion = new SqlConnection();
-                SqlCommand comando = new SqlCommand();
-                List<Pokemon> lista = new List<Pokemon>();
+                conexion.setearQuery("Update POKEMONS Set Nombre=@Nombre, Descripcion=@Descripcion, Imagen=@Imagen, idTipo=@idTipo Where Id=@id");
+                conexion.agregarParametro("@Nombre", pokemon.Nombre);
+                conexion.agregarParametro("@Descripcion", pokemon.Descripcion);
+                conexion.agregarParametro("@Imagen", pokemon.UrlImage);
+                conexion.agregarParametro("@idTipo", pokemon.Tipo.Id);
+                conexion.agregarParametro("@id", pokemon.Id);
+                conexion.ejecutarAccion();
 
-                conexion.ConnectionString = "data source=.\\sqlexpress; initial catalog=POKEMON_DB; integrated security=sspi";
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "Update POKEMONS Set Nombre=@Nombre, Descripcion=@Descripcion, Imagen=@Imagen, idTipo=@idTipo Where Id=@id";
-                
-                comando.Parameters.AddWithValue("@Nombre", pokemon.Nombre);
-                comando.Parameters.AddWithValue("@Descripcion", pokemon.Descripcion);
-                comando.Parameters.AddWithValue("@Imagen", pokemon.UrlImage);
-                comando.Parameters.AddWithValue("@idTipo", pokemon.Tipo.Id);
-                comando.Parameters.AddWithValue("@id", pokemon.Id);
-                comando.Connection = conexion;
+            }
+            catch (Exception ex)
+            {
 
-                conexion.Open();
-                comando.ExecuteNonQuery();
+                throw ex;
+            }
+        }
+
+        public void eliminar(int id)
+        {
+            AccesoDatos conexion = new AccesoDatos();
+            try
+            {
+                conexion.setearQuery("Delete from POKEMONS Where Id=@id");
+                conexion.agregarParametro("@id", id);
+                conexion.ejecutarAccion();
             }
             catch (Exception ex)
             {
@@ -74,19 +81,14 @@ namespace Negocio
 
         public void agregar(Pokemon nuevo)
         {
-            SqlConnection conexion = new SqlConnection();
-            SqlCommand comando = new SqlCommand();
-            conexion.ConnectionString = "data source=.\\sqlexpress; initial catalog=POKEMON_DB; integrated security=sspi";
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "Insert Into POKEMONS (Nombre, Descripcion, Imagen, idTipo) Values (@Nombre, @Descripcion, @Imagen, @idTipo)";
-            comando.Parameters.AddWithValue("@Nombre", nuevo.Nombre);
-            comando.Parameters.AddWithValue("@Descripcion", nuevo.Descripcion);
-            comando.Parameters.AddWithValue("@Imagen", nuevo.UrlImage);
-            comando.Parameters.AddWithValue("@idTipo", nuevo.Tipo.Id);
-            comando.Connection = conexion;
+            AccesoDatos conexion = new AccesoDatos();
+            conexion.setearQuery("Insert Into POKEMONS (Nombre, Descripcion, Imagen, idTipo) Values (@Nombre, @Descripcion, @Imagen, @idTipo)");
+            conexion.agregarParametro("@Nombre", nuevo.Nombre);
+            conexion.agregarParametro("@Descripcion", nuevo.Descripcion);
+            conexion.agregarParametro("@Imagen", nuevo.UrlImage);
+            conexion.agregarParametro("@idTipo", nuevo.Tipo.Id);
+            conexion.ejecutarAccion();
 
-            conexion.Open();
-            comando.ExecuteNonQuery();
         }
     }
 }

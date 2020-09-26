@@ -63,5 +63,12 @@ namespace WinForms
             modificar.ShowDialog();
             cargar();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            PokemonNegocio negocio = new PokemonNegocio();
+            negocio.eliminar(((Pokemon)dgvLista.CurrentRow.DataBoundItem).Id);
+            cargar();
+        }
     }
 }
