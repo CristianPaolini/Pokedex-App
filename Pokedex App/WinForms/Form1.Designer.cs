@@ -33,6 +33,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.txtFiltro = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +70,7 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(139, 290);
+            this.btnModificar.Location = new System.Drawing.Point(140, 290);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(75, 23);
             this.btnModificar.TabIndex = 3;
@@ -86,11 +88,31 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // txtFiltro
+            // 
+            this.txtFiltro.Location = new System.Drawing.Point(34, 12);
+            this.txtFiltro.Name = "txtFiltro";
+            this.txtFiltro.Size = new System.Drawing.Size(208, 20);
+            this.txtFiltro.TabIndex = 5;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(262, 9);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 6;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // Pokedex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(787, 325);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAgregar);
@@ -102,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPokemon)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -112,6 +135,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox txtFiltro;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 

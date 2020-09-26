@@ -14,6 +14,7 @@ namespace WinForms
 {
     public partial class Pokedex : Form
     {
+        private List<Pokemon> listaOriginal;
         public Pokedex()
         {
             InitializeComponent();
@@ -27,7 +28,8 @@ namespace WinForms
         private void cargar()
         {
             PokemonNegocio negocio = new PokemonNegocio();
-            dgvLista.DataSource = negocio.listar();
+            listaOriginal = negocio.listar();
+            dgvLista.DataSource = listaOriginal;
             dgvLista.Columns[0].Visible = false;
             dgvLista.Columns[3].Visible = false;
 
@@ -69,6 +71,27 @@ namespace WinForms
             PokemonNegocio negocio = new PokemonNegocio();
             negocio.eliminar(((Pokemon)dgvLista.CurrentRow.DataBoundItem).Id);
             cargar();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            if(txtFiltro.Text == "")
+            {
+                dgvLista.DataSource = listaOriginal;
+            }
+
+            else
+            {
+                List<Pokemon> listaFiltrada = listaOriginal.FindAll(poke => poke.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || poke.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+
+                dgvLista.DataSource = listaFiltrada;
+            }
         }
     }
 }
