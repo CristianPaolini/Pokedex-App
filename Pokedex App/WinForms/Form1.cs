@@ -75,7 +75,9 @@ namespace WinForms
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            List<Pokemon> listafiltrada = listaOriginal.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()));
 
+            dgvLista.DataSource = listafiltrada;
 
         }
 

@@ -52,7 +52,7 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(56, 113);
+            this.lblDescripcion.Location = new System.Drawing.Point(56, 108);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
             this.lblDescripcion.TabIndex = 1;
@@ -61,7 +61,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(91, 207);
+            this.lblTipo.Location = new System.Drawing.Point(91, 206);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(31, 13);
             this.lblTipo.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(147, 110);
+            this.txtDescripcion.Location = new System.Drawing.Point(147, 108);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(127, 20);
             this.txtDescripcion.TabIndex = 4;
@@ -86,7 +86,7 @@
             // cboTipo
             // 
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(147, 207);
+            this.cboTipo.Location = new System.Drawing.Point(147, 206);
             this.cboTipo.Name = "cboTipo";
             this.cboTipo.Size = new System.Drawing.Size(127, 21);
             this.cboTipo.TabIndex = 5;
@@ -115,7 +115,7 @@
             // lblUrlImage
             // 
             this.lblUrlImage.AutoSize = true;
-            this.lblUrlImage.Location = new System.Drawing.Point(61, 160);
+            this.lblUrlImage.Location = new System.Drawing.Point(61, 157);
             this.lblUrlImage.Name = "lblUrlImage";
             this.lblUrlImage.Size = new System.Drawing.Size(61, 13);
             this.lblUrlImage.TabIndex = 8;
@@ -123,7 +123,7 @@
             // 
             // txtUrlImage
             // 
-            this.txtUrlImage.Location = new System.Drawing.Point(147, 160);
+            this.txtUrlImage.Location = new System.Drawing.Point(147, 157);
             this.txtUrlImage.Name = "txtUrlImage";
             this.txtUrlImage.Size = new System.Drawing.Size(127, 20);
             this.txtUrlImage.TabIndex = 9;
